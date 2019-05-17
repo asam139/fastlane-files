@@ -1,12 +1,17 @@
 #!/bin/sh
-REPO_NAME="yuge-specs"
-PROJECT_NAME="YugeCAM"
+REPO_NAME=""
+PROJECT_NAME=""
 
 helpFunction()
 {
+   UNDERLINE='\033[4m' 
+   GREEN='\033[0;32m'
+   NC='\033[0m'
+
    echo ""
-   echo "Usage: $0 -v version"
-   echo "\t-v Value for new release, i.e 1.0"
+   echo "${UNDERLINE}Usage:${NC}"
+   echo "\t${GREEN}$0 -v version${NC}"
+   echo ""
    exit 1 # Exit script after printing help
 }
 
@@ -21,7 +26,6 @@ done
 # Print helpFunction in case parameters are empty
 if [ -z "$version" ]
 then
-   echo "Some or all of the parameters are empty";
    helpFunction
 fi
 
